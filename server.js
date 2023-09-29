@@ -16,8 +16,8 @@ app.use(express.static('frontend'))
 
 io.on('connection', (socket) => {
 
-    socket.on('identify', (msg) => {
-        users.push(msg)
+    socket.on('identify', (user) => {
+        users.push(user)
         io.emit('identify', users);
     });
 
@@ -28,5 +28,5 @@ io.on('connection', (socket) => {
   });
 
 server.listen(5000, () => {
-  console.log('server running at http://localhost:3000');
+  console.log('server running at http://localhost:5000');
 });
