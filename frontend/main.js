@@ -38,6 +38,7 @@ export default {
     }
 
     function saveMessage(){
+      if(!textInput.value) return
       updateMessages(textInput.value,'outgoing',userName.value)
       let newMessage  = {
         user:userName.value,
